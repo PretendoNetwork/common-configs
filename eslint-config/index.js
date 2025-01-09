@@ -21,13 +21,17 @@ export default tseslint.config(
             'no-console': 'off',
             'prefer-const': 'error',
             'no-var': 'error',
-            'no-unused-vars': 'off',
+            'no-unused-vars': [
+                'error',
+                { argsIgnorePattern: '^_' }
+            ],
             'one-var': ['error', 'never']
         }
     },
     {
         // https://typescript-eslint.io/rules/
         extends: [tseslint.configs.recommended],
+        files: ['**/*.ts', '**/*.d.ts'],
         rules: {
             '@typescript-eslint/no-unused-vars': [
                 'error',

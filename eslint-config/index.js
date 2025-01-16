@@ -23,30 +23,30 @@ export default tseslint.config(
             'no-var': 'error',
             'no-unused-vars': [
                 'error',
-                { argsIgnorePattern: '^_' }
+                { argsIgnorePattern: '^_', caughtErrorsIgnorePattern: '^ignore' }
             ],
             'one-var': ['error', 'never']
         }
     },
-    {
-        // https://typescript-eslint.io/rules/
-        extends: [tseslint.configs.recommended],
-        files: ['**/*.ts', '**/*.d.ts'],
-        rules: {
-            '@typescript-eslint/no-unused-vars': [
-                'error',
-                { argsIgnorePattern: '^_' }
-            ],
-            '@typescript-eslint/no-inferrable-types': 'off',
-            '@typescript-eslint/explicit-function-return-type': 'error',
-            '@typescript-eslint/no-explicit-any': 'off',
-            '@typescript-eslint/no-empty-object-type': ['off'],
-            '@typescript-eslint/no-import-type-side-effects': 'error',
-            '@typescript-eslint/consistent-type-imports': ['error', {
-                fixStyle: 'separate-type-imports'
-            }]
-        }
-    },
+	{
+		// https://typescript-eslint.io/rules/
+		extends: [tseslint.configs.recommended],
+		files: ['**/*.ts', '**/*.d.ts'],
+		rules: {
+			'@typescript-eslint/no-unused-vars': [
+				'error',
+				{ argsIgnorePattern: '^_' }
+			],
+			'@typescript-eslint/no-inferrable-types': 'off',
+			'@typescript-eslint/explicit-function-return-type': 'error',
+			'@typescript-eslint/no-explicit-any': 'off',
+			'@typescript-eslint/no-empty-object-type': ['off'],
+			'@typescript-eslint/no-import-type-side-effects': 'error',
+			'@typescript-eslint/consistent-type-imports': ['error', {
+				fixStyle: 'separate-type-imports'
+			}]
+		}
+	},
     {
         // https://eslint-community.github.io/eslint-plugin-eslint-comments/rules/
         extends: [eslintCommentPlugin.recommended],
@@ -72,25 +72,30 @@ export default tseslint.config(
             }]
         }
     },
-    {
-        // https://www.npmjs.com/package/eslint-plugin-import
-        extends: [importPlugin.flatConfigs.recommended, importPlugin.flatConfigs.warnings, importPlugin.flatConfigs.typescript],
-        settings: {
-            'import/resolver': {
-                typescript: {
-                    alwaysTryTypes: true,
-                    project: './tsconfig.json'
-                },
-                node: true
-            }
-        },
-        rules: {
-            'import/order': ['warn', {
-                'groups': ['builtin', 'external', 'internal', 'parent', 'sibling', 'index', 'object', 'type'],
-                'newlines-between': 'never'
-            }],
-            'import/first': 'error',
-            'import/consistent-type-specifier-style': ['error', 'prefer-top-level']
-        }
-    }
+	{
+		// https://www.npmjs.com/package/eslint-plugin-import
+		extends: [importPlugin.flatConfigs.recommended, importPlugin.flatConfigs.warnings],
+		rules: {
+			'import/order': ['warn', {
+				'groups': ['builtin', 'external', 'internal', 'parent', 'sibling', 'index', 'object', 'type'],
+				'newlines-between': 'never'
+			}],
+			'import/first': 'error',
+			'import/consistent-type-specifier-style': ['error', 'prefer-top-level']
+		}
+	},
+	{
+		// https://www.npmjs.com/package/eslint-plugin-import - but specifically for TypeScript
+		extends: [importPlugin.flatConfigs.typescript],
+		files: ['**/*.ts', '**/*.d.ts'],
+		settings: {
+			'import/resolver': {
+				typescript: {
+					alwaysTryTypes: true,
+					project: './tsconfig.json'
+				},
+				node: true
+			}
+		}
+	},
 );

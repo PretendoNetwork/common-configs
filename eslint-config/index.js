@@ -15,6 +15,7 @@ const stylisticConfig = stylisticPlugin.configs.customize({
 export default tseslint.config(
     {
         // https://eslint.org/docs/rules/
+        name: "PretendoNetwork/eslint-js",
         extends: [eslint.configs.recommended],
         rules: {
             'require-atomic-updates': 'off', // This rule is widely controversial and causes false positives
@@ -30,6 +31,7 @@ export default tseslint.config(
     },
 	{
 		// https://typescript-eslint.io/rules/
+        name: 'PretendoNetwork/typescript-eslint',
 		extends: [tseslint.configs.recommended],
 		files: ['**/*.ts', '**/*.d.ts'],
 		rules: {
@@ -49,6 +51,7 @@ export default tseslint.config(
 	},
     {
         // https://eslint-community.github.io/eslint-plugin-eslint-comments/rules/
+        name: 'PretendoNetwork/eslint-comments',
         extends: [eslintCommentPlugin.recommended],
         rules: {
             '@eslint-community/eslint-comments/disable-enable-pair': ['error', { allowWholeFile: true }],
@@ -57,6 +60,7 @@ export default tseslint.config(
     },
     {
         // https://eslint.style/rules
+        name: 'PretendoNetwork/stylistic',
         extends: [stylisticConfig],
         rules: {
             '@stylistic/no-extra-semi': 'error',
@@ -74,6 +78,7 @@ export default tseslint.config(
     },
 	{
 		// https://www.npmjs.com/package/eslint-plugin-import
+        name: 'PretendoNetwork/import',
 		extends: [importPlugin.flatConfigs.recommended, importPlugin.flatConfigs.warnings],
 		rules: {
 			'import/order': ['warn', {
@@ -86,6 +91,7 @@ export default tseslint.config(
 	},
 	{
 		// https://www.npmjs.com/package/eslint-plugin-import - but specifically for TypeScript
+        name: 'PretendoNetwork/import-typescript',
 		extends: [importPlugin.flatConfigs.typescript],
 		files: ['**/*.ts', '**/*.d.ts'],
 		settings: {

@@ -35,7 +35,7 @@ export default tseslint.config(
 		rules: {
 			'@typescript-eslint/no-unused-vars': [
 				'error',
-				{ argsIgnorePattern: '^_' }
+				{ argsIgnorePattern: '^_', caughtErrorsIgnorePattern: '^ignore' }
 			],
 			'@typescript-eslint/no-inferrable-types': 'off',
 			'@typescript-eslint/explicit-function-return-type': 'error',

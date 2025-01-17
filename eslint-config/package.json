@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "main": "index.js",
   "type": "module",
+  "scripts": {
+    "copy": "cp ../LICENSE ."
+  },
   "dependencies": {
     "@eslint-community/eslint-plugin-eslint-comments": "^4.4.1",
     "@stylistic/eslint-plugin": "^2.12.1",

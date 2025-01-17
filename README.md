@@ -4,9 +4,9 @@ Pretendo's shared configuration packages and template repo files for configurati
 
 ## To-Do
 
-- [ ] Add CI to publish to npm
-- [ ] .editorconfig
-- [ ] .gitattributes
+- [x] Add CI to publish to npm
+- [x] .editorconfig
+- [x] .gitattributes
 - [ ] tsconfig.json
 - [ ] .vscode/settings.json
 - [ ] .vscode/extensions.json

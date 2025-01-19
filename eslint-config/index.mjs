@@ -104,4 +104,15 @@ export default tseslint.config(
 			}
 		}
 	},
+	{
+		// https://eslint.org/docs/latest/use/configure/ignore
+		name: 'PretendoNetwork/global-ignores',
+		ignores: [
+			'**/dist/', // Common build output directory
+			'**/out/', // Common build output directory
+			'**/.next/', // Next.js build output directory
+			'**/.nuxt/', // Nuxt.js build output directory
+			'**/*.min.js', // Minified JavaScript files
+		]
+	}
 );

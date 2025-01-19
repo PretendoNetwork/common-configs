@@ -1,18 +1,18 @@
 {
-  "name": "@pretendonetwork/eslint-config",
-  "version": "0.0.1",
-  "main": "index.js",
-  "type": "module",
-  "scripts": {
-    "copy": "cp ../LICENSE ."
-  },
-  "dependencies": {
-    "@eslint-community/eslint-plugin-eslint-comments": "^4.4.1",
-    "@stylistic/eslint-plugin": "^2.12.1",
-    "eslint": "^9.17.0",
-    "eslint-plugin-import": "^2.31.0",
-    "typescript-eslint": "^8.19.1",
-    "@typescript-eslint/parser": "^8.20.0",
-    "eslint-import-resolver-typescript": "^3.7.0"
-  }
+	"name": "@pretendonetwork/eslint-config",
+	"version": "0.0.2",
+	"main": "index.mjs",
+	"type": "module",
+	"scripts": {
+		"inspect": "npx @eslint/config-inspector@latest --config index.mjs"
+	},
+	"dependencies": {
+		"@eslint-community/eslint-plugin-eslint-comments": "^4.4.1",
+		"@stylistic/eslint-plugin": "^2.12.1",
+		"eslint": "^9.17.0",
+		"eslint-plugin-import": "^2.31.0",
+		"typescript-eslint": "^8.19.1",
+		"@typescript-eslint/parser": "^8.20.0",
+		"eslint-import-resolver-typescript": "^3.7.0"
+	}
 }

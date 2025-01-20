@@ -20,7 +20,9 @@ export default tseslint.config(
         rules: {
             'require-atomic-updates': 'off', // This rule is widely controversial and causes false positives
             'no-console': 'off',
-            'prefer-const': 'error',
+            'prefer-const': ['error', {
+				destructuring: 'all', // Only error if all destructured variables can be const
+			}],
             'no-var': 'error',
             'no-unused-vars': [
                 'error',
@@ -87,6 +89,9 @@ export default tseslint.config(
 			}],
 			'import/first': 'error',
 			'import/consistent-type-specifier-style': ['error', 'prefer-top-level']
+		},
+		languageOptions: {
+			ecmaVersion: 'latest' // For some reason, the recommended config sets this to 2018, reset this to the default
 		}
 	},
 	{

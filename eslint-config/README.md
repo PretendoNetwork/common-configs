@@ -33,8 +33,8 @@ For global variables that are defined in other files or are provided by the envi
 
 ## Plugins and Configurations
 
-- [eslint (recommended preset)](https://eslint.org/docs/rules/)
-- [typescript-eslint (recommended preset)](https://typescript-eslint.io/rules/)
+- [eslint](https://eslint.org/docs/rules/)
+- [typescript-eslint](https://typescript-eslint.io/rules/)
 - [eslint-plugin-eslint-comments](https://mysticatea.github.io/eslint-plugin-eslint-comments/rules/)
 - [stylistic](https://eslint.style/rules)
 - [eslint-plugin-import](https://www.npmjs.com/package/eslint-plugin-import)
@@ -53,6 +53,11 @@ For global variables that are defined in other files or are provided by the envi
 The recommended presets for [eslint](https://eslint.org/docs/latest/rules/) and [typescript-eslint](https://typescript-eslint.io/rules/) are included in this configuration.
 
 These presets provide a base set of rules for JavaScript and TypeScript projects which are commonly accepted as best practices.
+
+#### Presets included
+
+- `@eslint/js` - `recommended`
+- `typescript-eslint` - `recommended`
 
 #### Changes to the default configuration
 
@@ -78,6 +83,10 @@ These presets provide a base set of rules for JavaScript and TypeScript projects
 
 This plugin enforces rules around eslint directive comments namely enforcing comments and forcing eslint-disable comments to have a matching eslint-enable comment.
 
+#### Presets included
+
+- `@eslint-community/eslint-comments/recommended`
+
 #### Changes to the default configuration
 
 - 📜 - `@eslint-community/eslint-comments/disable-enable-pair`: Allows disabling rules for a whole file without a matching enable directive
@@ -87,7 +96,7 @@ This plugin enforces rules around eslint directive comments namely enforcing com
 
 [ESLint Stylistic](https://eslint.style/) rules are included in this configuration to enforce a consistent code style across all projects.
 
-The base configuration is:
+#### Base configuration
 
 - Tabs for indentation
 - Single quotes
@@ -107,8 +116,31 @@ The base configuration is:
 
 ### eslint-plugin-import
 
-TODO
+#### Presets included
+
+- `recommended`
+- `warnings`
+
+#### Changes to the default configuration
+
+- ✅ - `import/order`: Enforce a consistent order for imports
+  - The order goes as follows:
+  1. Node.js built-in modules
+  2. External modules
+  3. Internal modules
+  4. Parent modules
+  5. Sibling modules
+  6. Index modules
+  7. Type Imports (TypeScript only)
+  8. Everything else
+  - No empty lines between groups
+- ✅ - `import/first`: Ensure all imports are at the top of the file
+- ✅ - `import/consistent-type-specifier-style`: Enforce top-level type imports instead of inline type imports
 
 ### Global Ignores
 
-TODO
+- `**/dist/**`: Ignore build directories
+- `**/out/**`: Ignore build directories
+- `**/.next/**`: Ignore Next.js build directories
+- `**/.nuxt/**`: Ignore Nuxt.js build directories
+- `**/*.min.js`: Ignore minified JavaScript files

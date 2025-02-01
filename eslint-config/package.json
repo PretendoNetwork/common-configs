@@ -1,10 +1,12 @@
 {
 	"name": "@pretendonetwork/eslint-config",
-	"version": "0.0.4",
+	"version": "0.0.5",
 	"main": "index.mjs",
 	"type": "module",
 	"scripts": {
-		"inspect": "npx @eslint/config-inspector@latest --config index.mjs"
+		"inspect": "npx @eslint/config-inspector@latest --config index.mjs",
+		"lint": "eslint .",
+		"lint:fix": "eslint --fix ."
 	},
 	"dependencies": {
 		"@eslint-community/eslint-plugin-eslint-comments": "^4.4.1",

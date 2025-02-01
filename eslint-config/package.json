@@ -4,7 +4,9 @@
 	"main": "index.mjs",
 	"type": "module",
 	"scripts": {
-		"inspect": "npx @eslint/config-inspector@latest --config index.mjs"
+		"inspect": "npx @eslint/config-inspector@latest --config index.mjs",
+		"lint": "eslint .",
+		"lint:fix": "eslint --fix ."
 	},
 	"dependencies": {
 		"@eslint-community/eslint-plugin-eslint-comments": "^4.4.1",

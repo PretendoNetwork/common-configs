@@ -75,7 +75,8 @@ export default tseslint.config(
             '@stylistic/object-curly-newline': ['error', {
                 multiline: true,
                 consistent: true
-            }]
+            }],
+			'@stylistic/brace-style': ["error", "1tbs", { "allowSingleLine": false }]
         }
     },
 	{

@@ -29,7 +29,8 @@ export default tseslint.config(
 				'error',
 				{ argsIgnorePattern: '^_', caughtErrorsIgnorePattern: '^ignore' }
 			],
-			'one-var': ['error', 'never']
+			'one-var': ['error', 'never'],
+			'curly': ['error', 'all'] // Always require curly braces
 		}
 	},
 	{

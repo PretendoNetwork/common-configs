@@ -68,6 +68,7 @@ These presets provide a base set of rules for JavaScript and TypeScript projects
 - 📜 - `no-unused-vars`: This is configured to allow using \_ prefix to ignore the error for unused vars - we usually need to keep method parameters for future use
 - ✅ - `prefer-const`: We prefer `const` over `let` for variables that are not reassigned
 - ✅ - `no-var`: We disallow the use of `var` in favor of `let` and `const`
+- ✅ - `curly`: Force braces around all control statements
 
 **typescript-eslint**
 
@@ -110,6 +111,7 @@ This plugin enforces rules around eslint directive comments namely enforcing com
 
 - 📜 - `@stylistic/yield-star-spacing`: Change the `*` to be joined with `yield` like `yield*`
 - 📜 - `@stylistic/operator-linebreak`: Ensures linebreaks are _after_ the operator, but in ternaries they are _before_
+- 📜 - `@stylistic/brace-style`: Disable brackets being on the same line
 - ✅ - `@stylistic/no-extra-semi`: Disallow unnecessary semicolons
 - ✅ - `@stylistic/curly-newline`: Enforce consistent line breaks inside braces
 - ✅ - `@stylistic/object-curly-newline`: Enforce consistent line breaks inside braces

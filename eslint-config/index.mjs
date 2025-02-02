@@ -4,6 +4,7 @@ import stylisticPlugin from '@stylistic/eslint-plugin';
 import importPlugin from 'eslint-plugin-import';
 // eslint-disable-next-line import/no-unresolved -- For some reason, eslint doesn't like the TypeScript plugin
 import tseslint from 'typescript-eslint';
+import globals from 'globals';
 
 const stylisticConfig = stylisticPlugin.configs.customize({
 	indent: 'tab',
@@ -109,6 +110,27 @@ export default tseslint.config(
 					project: './tsconfig.json'
 				},
 				node: true
+			}
+		}
+	},
+	{
+		name: 'PretendoNetwork/global-cjs',
+		files: ['**/*.js', '**/*.cjs'],
+		languageOptions: {
+			globals: {
+				...globals.builtin,
+				...globals.commonjs,
+				...globals['shared-node-browser']
+			}
+		}
+	},
+	{
+		name: 'PretendoNetwork/global-esm',
+		files: ['**/*.ts', '**/*.d.ts', '**/*.mjs'],
+		languageOptions: {
+			globals: {
+				...globals.builtin,
+				...globals['shared-node-browser']
 			}
 		}
 	},

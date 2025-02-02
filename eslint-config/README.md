@@ -25,6 +25,36 @@ If your function is used in a file as a global function, but ESLint is still thr
 
 ### `no-undef` is throwing errors for global variables
 
+#### Node and Browser Globals
+
+The shared configuration contains a sensible set of globals for Node.js and the browser. If you are using a global variable that is not defined in the shared configuration, you can install the `globals` package:
+
+```bash
+npm i -D globals
+```
+
+Then, you can add the global variable to your `eslint.config.mjs` file:
+
+```javascript
+import globals from 'globals';
+
+---
+
+{
+	// (Optional) If you have both Node and Browser files, create a separate config for each with file targets
+	files: ['src/public/**.js'],
+	languageOptions: {
+		globals: {
+			// Only include the globals you need, don't include both Node and Browser globals
+			...globals.browser, // For browser globals
+			...globals.node, // For Node globals
+		}
+	}
+}
+```
+
+#### Other Global Variables
+
 For global variables that are defined in other files or are provided by the environment, you can disable the rule for that specific line and **add a comment to explain where it's defined**.
 
 ```typescript

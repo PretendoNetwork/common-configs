@@ -11,7 +11,8 @@ const stylisticConfig = stylisticPlugin.configs.customize({
 	quotes: 'single',
 	semi: true,
 	commaDangle: 'never',
-	braceStyle: '1tbs'
+	braceStyle: '1tbs',
+	jsx: true
 });
 
 export default tseslint.config(
@@ -32,6 +33,13 @@ export default tseslint.config(
 			],
 			'one-var': ['error', 'never'],
 			'curly': ['error', 'all'] // Always require curly braces
+		},
+		languageOptions: {
+			parserOptions: {
+				ecmaFeatures: {
+					jsx: true
+				}
+			}
 		}
 	},
 	{

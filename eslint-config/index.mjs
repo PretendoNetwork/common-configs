@@ -11,10 +11,15 @@ const stylisticConfig = stylisticPlugin.configs.customize({
 	quotes: 'single',
 	semi: true,
 	commaDangle: 'never',
-	braceStyle: '1tbs'
+	braceStyle: '1tbs',
+	jsx: true
 });
 
 export default tseslint.config(
+	{
+		name: 'PretendoNetwork/files',
+		files: ['**/*.js', '**/*.ts', '**/*.jsx', '**/*.tsx', '**/*.mjs', '**/*.cjs', '**/*.d.ts']
+	},
 	{
 		// https://eslint.org/docs/rules/
 		name: 'PretendoNetwork/eslint-js',
@@ -32,13 +37,20 @@ export default tseslint.config(
 			],
 			'one-var': ['error', 'never'],
 			'curly': ['error', 'all'] // Always require curly braces
+		},
+		languageOptions: {
+			parserOptions: {
+				ecmaFeatures: {
+					jsx: true
+				}
+			}
 		}
 	},
 	{
 		// https://typescript-eslint.io/rules/
 		name: 'PretendoNetwork/typescript-eslint',
 		extends: [tseslint.configs.recommended],
-		files: ['**/*.ts', '**/*.d.ts'],
+		files: ['**/*.ts', '**/*.tsx', '**/*.d.ts'],
 		rules: {
 			'@typescript-eslint/no-unused-vars': [
 				'error',
@@ -102,7 +114,7 @@ export default tseslint.config(
 		// https://www.npmjs.com/package/eslint-plugin-import - but specifically for TypeScript
 		name: 'PretendoNetwork/import-typescript',
 		extends: [importPlugin.flatConfigs.typescript],
-		files: ['**/*.ts', '**/*.d.ts'],
+		files: ['**/*.ts', '**/*.tsx', '**/*.d.ts'],
 		settings: {
 			'import/resolver': {
 				typescript: {
@@ -126,7 +138,7 @@ export default tseslint.config(
 	},
 	{
 		name: 'PretendoNetwork/global-esm',
-		files: ['**/*.ts', '**/*.d.ts', '**/*.mjs'],
+		files: ['**/*.ts', '**/*.tsx', '**/*.d.ts', '**/*.mjs'],
 		languageOptions: {
 			globals: {
 				...globals.builtin,

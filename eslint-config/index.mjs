@@ -38,7 +38,7 @@ export default tseslint.config(
 		// https://typescript-eslint.io/rules/
 		name: 'PretendoNetwork/typescript-eslint',
 		extends: [tseslint.configs.recommended],
-		files: ['**/*.ts', '**/*.d.ts'],
+		files: ['**/*.ts', '**/*.tsx', '**/*.d.ts'],
 		rules: {
 			'@typescript-eslint/no-unused-vars': [
 				'error',
@@ -102,7 +102,7 @@ export default tseslint.config(
 		// https://www.npmjs.com/package/eslint-plugin-import - but specifically for TypeScript
 		name: 'PretendoNetwork/import-typescript',
 		extends: [importPlugin.flatConfigs.typescript],
-		files: ['**/*.ts', '**/*.d.ts'],
+		files: ['**/*.ts', '**/*.tsx', '**/*.d.ts'],
 		settings: {
 			'import/resolver': {
 				typescript: {
@@ -126,7 +126,7 @@ export default tseslint.config(
 	},
 	{
 		name: 'PretendoNetwork/global-esm',
-		files: ['**/*.ts', '**/*.d.ts', '**/*.mjs'],
+		files: ['**/*.ts', '**/*.tsx', '**/*.d.ts', '**/*.mjs'],
 		languageOptions: {
 			globals: {
 				...globals.builtin,

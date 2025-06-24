@@ -17,6 +17,10 @@ const stylisticConfig = stylisticPlugin.configs.customize({
 
 export default tseslint.config(
 	{
+		name: 'PretendoNetwork/files',
+		files: ['**/*.js', '**/*.ts', '**/*.jsx', '**/*.tsx', '**/*.mjs', '**/*.cjs', '**/*.d.ts']
+	},
+	{
 		// https://eslint.org/docs/rules/
 		name: 'PretendoNetwork/eslint-js',
 		extends: [eslint.configs.recommended],

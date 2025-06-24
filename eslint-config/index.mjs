@@ -108,6 +108,9 @@ export default tseslint.config(
 		},
 		languageOptions: {
 			ecmaVersion: 'latest' // For some reason, the recommended config sets this to 2018, reset this to the default
+		},
+		settings: {
+			'import/extensions': ['.js', '.jsx']
 		}
 	},
 	{
@@ -123,6 +126,14 @@ export default tseslint.config(
 				},
 				node: true
 			}
+		}
+	},
+	{
+		// https://github.com/jsx-eslint/eslint-plugin-react
+		name: 'PretendoNetwork/react-plugin',
+		files: ['**/*.jsx', '**/*.tsx'],
+		rules: {
+			'react/jsx-uses-vars': 'error'
 		}
 	},
 	{

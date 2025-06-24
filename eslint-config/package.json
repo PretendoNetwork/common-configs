@@ -1,6 +1,6 @@
 {
 	"name": "@pretendonetwork/eslint-config",
-	"version": "0.0.9",
+	"version": "0.0.10",
 	"main": "index.mjs",
 	"type": "module",
 	"scripts": {
@@ -17,6 +17,7 @@
 		"eslint": "^9.17.0",
 		"eslint-import-resolver-typescript": "^3.7.0",
 		"eslint-plugin-import": "^2.31.0",
+		"eslint-plugin-react": "^7.37.5",
 		"globals": "^15.14.0",
 		"typescript-eslint": "^8.19.1"
 	}

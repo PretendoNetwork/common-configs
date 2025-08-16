@@ -111,23 +111,23 @@ export default tseslint.config(
 			ecmaVersion: 'latest' // For some reason, the recommended config sets this to 2018, reset this to the default
 		},
 		settings: {
-			'import/extensions': ['.js', '.jsx']
+			'import/extensions': ['.js', '.jsx'],
+			'import/resolver': {
+				typescript: {
+					alwaysTryTypes: true,
+					project: './tsconfig.json'
+				},
+				node: {
+					extensions: ['.js', '.jsx', '.ts', '.tsx']
+				}
+			}
 		}
 	},
 	{
 		// https://www.npmjs.com/package/eslint-plugin-import - but specifically for TypeScript
 		name: 'PretendoNetwork/import-typescript',
 		extends: [importPlugin.flatConfigs.typescript],
-		files: ['**/*.ts', '**/*.tsx', '**/*.d.ts'],
-		settings: {
-			'import/resolver': {
-				typescript: {
-					alwaysTryTypes: true,
-					project: './tsconfig.json'
-				},
-				node: true
-			}
-		}
+		files: ['**/*.ts', '**/*.tsx', '**/*.d.ts']
 	},
 	{
 		// https://github.com/jsx-eslint/eslint-plugin-react

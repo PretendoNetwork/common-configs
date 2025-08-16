@@ -127,7 +127,12 @@ export default tseslint.config(
 		// https://www.npmjs.com/package/eslint-plugin-import - but specifically for TypeScript
 		name: 'PretendoNetwork/import-typescript',
 		extends: [importPlugin.flatConfigs.typescript],
-		files: ['**/*.ts', '**/*.tsx', '**/*.d.ts']
+		files: ['**/*.ts', '**/*.tsx', '**/*.d.ts'],
+		rules: {
+			// These rules are often false positives with TypeScript, the type system handles this
+			'import/no-named-as-default-member': 'off',
+			'import/namespace': 'off'
+		}
 	},
 	{
 		// https://github.com/jsx-eslint/eslint-plugin-react

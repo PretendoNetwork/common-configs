@@ -102,7 +102,8 @@ export default tseslint.config(
 		rules: {
 			'import/order': ['warn', {
 				'groups': ['builtin', 'external', 'internal', 'parent', 'sibling', 'index', 'type'],
-				'newlines-between': 'never'
+				'newlines-between': 'never',
+				'sortTypesGroup': true
 			}],
 			'import/first': 'error',
 			'import/consistent-type-specifier-style': ['error', 'prefer-top-level']

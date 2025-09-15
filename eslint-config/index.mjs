@@ -2,7 +2,6 @@ import eslint from '@eslint/js';
 import eslintCommentPlugin from '@eslint-community/eslint-plugin-eslint-comments/configs';
 import stylisticPlugin from '@stylistic/eslint-plugin';
 import importPlugin from 'eslint-plugin-import';
-// eslint-disable-next-line import/no-unresolved -- For some reason, eslint doesn't like the TypeScript plugin
 import tseslint from 'typescript-eslint';
 import reactPlugin from 'eslint-plugin-react';
 import globals from 'globals';

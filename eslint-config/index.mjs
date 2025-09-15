@@ -105,7 +105,17 @@ export default tseslint.config(
 				'sortTypesGroup': true
 			}],
 			'import/first': 'error',
-			'import/consistent-type-specifier-style': ['error', 'prefer-top-level']
+			'import/consistent-type-specifier-style': ['error', 'prefer-top-level'],
+			'import/no-relative-packages': 'warn',
+			'import/no-relative-parent-imports': 'warn',
+			'no-restricted-imports': ['warn', {
+				patterns: [
+					{
+						group: ['./\\*', '../\\*'],
+						message: 'Use import aliases over relative paths.'
+					}
+				]
+			}]
 		},
 		languageOptions: {
 			ecmaVersion: 'latest' // For some reason, the recommended config sets this to 2018, reset this to the default

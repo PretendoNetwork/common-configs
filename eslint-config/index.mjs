@@ -106,8 +106,6 @@ export default tseslint.config(
 			}],
 			'import/first': 'error',
 			'import/consistent-type-specifier-style': ['error', 'prefer-top-level'],
-			'import/no-relative-packages': 'warn',
-			'import/no-relative-parent-imports': 'warn',
 			'no-restricted-imports': ['warn', {
 				patterns: [
 					{

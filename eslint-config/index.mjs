@@ -2,7 +2,6 @@ import eslint from '@eslint/js';
 import eslintCommentPlugin from '@eslint-community/eslint-plugin-eslint-comments/configs';
 import stylisticPlugin from '@stylistic/eslint-plugin';
 import importPlugin from 'eslint-plugin-import';
-// eslint-disable-next-line import/no-unresolved -- For some reason, eslint doesn't like the TypeScript plugin
 import tseslint from 'typescript-eslint';
 import reactPlugin from 'eslint-plugin-react';
 import globals from 'globals';
@@ -102,10 +101,19 @@ export default tseslint.config(
 		rules: {
 			'import/order': ['warn', {
 				'groups': ['builtin', 'external', 'internal', 'parent', 'sibling', 'index', 'type'],
-				'newlines-between': 'never'
+				'newlines-between': 'never',
+				'sortTypesGroup': true
 			}],
 			'import/first': 'error',
-			'import/consistent-type-specifier-style': ['error', 'prefer-top-level']
+			'import/consistent-type-specifier-style': ['error', 'prefer-top-level'],
+			'no-restricted-imports': ['warn', {
+				patterns: [
+					{
+						group: ['./\\*', '../\\*'],
+						message: 'Use import aliases over relative paths.'
+					}
+				]
+			}]
 		},
 		languageOptions: {
 			ecmaVersion: 'latest' // For some reason, the recommended config sets this to 2018, reset this to the default

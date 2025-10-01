@@ -4,10 +4,14 @@ on:
   push:
     branches:
       - master
-    paths: 
-      - 'eslint-config/package.json'
-      - 'eslint-config/index.mjs'
-  workflow_dispatch: 
+    paths:
+      - "eslint-config/package.json"
+      - "eslint-config/index.mjs"
+  workflow_dispatch:
+
+permissions:
+  id-token: write # Required for Trusted Publishing
+  contents: read
 
 jobs:
   build:
@@ -21,5 +25,3 @@ jobs:
       - name: Publishing
         run: npm publish --access public
         working-directory: eslint-config
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

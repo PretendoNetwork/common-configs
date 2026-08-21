@@ -91,7 +91,8 @@ export default tseslint.config(
 				multiline: true,
 				consistent: true
 			}],
-			'@stylistic/brace-style': ['error', '1tbs', { allowSingleLine: false }]
+			'@stylistic/brace-style': ['error', '1tbs', { allowSingleLine: false }],
+			'@stylistic/quotes': ['error', 'single', { avoidEscape: true, allowTemplateLiterals: 'avoidEscape' }]
 		}
 	},
 	{

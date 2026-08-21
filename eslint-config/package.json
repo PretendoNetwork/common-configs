@@ -1,6 +1,6 @@
 {
 	"name": "@pretendonetwork/eslint-config",
-	"version": "0.1.4",
+	"version": "0.2.0",
 	"main": "index.mjs",
 	"type": "module",
 	"repository": "github:PretendoNetwork/common-configs",

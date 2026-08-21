@@ -13,13 +13,13 @@
 		"@typescript-eslint/parser": "^8.20.0"
 	},
 	"dependencies": {
-		"@eslint-community/eslint-plugin-eslint-comments": "^4.6.0",
-		"@stylistic/eslint-plugin": "^5.9.0",
-		"eslint": "^9.39.3",
-		"eslint-import-resolver-typescript": "^4.4.4",
+		"@eslint-community/eslint-plugin-eslint-comments": "^4.7.2",
+		"@stylistic/eslint-plugin": "^5.10.0",
+		"eslint": "^9.39.5",
+		"eslint-import-resolver-typescript": "^4.4.5",
 		"eslint-plugin-import": "^2.32.0",
 		"eslint-plugin-react": "^7.37.5",
-		"globals": "^17.4.0",
-		"typescript-eslint": "^8.56.1"
+		"globals": "^17.11.0",
+		"typescript-eslint": "^8.67.0"
 	}
 }
